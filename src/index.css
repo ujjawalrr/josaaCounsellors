@@ -1,0 +1,283 @@
+*{
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+.contentContainer {
+  margin-top: 64px;
+}
+.MuiList-padding {
+  padding: 0 !important;
+}
+/* Register */
+
+.login {
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 5vh 0;
+}
+.login .bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(./images/iitBombay.png);
+  opacity: 0.5;
+  min-height: calc(100vh - 64px);
+}
+.login .container {
+  position: relative;
+  z-index: 1;
+}
+.row .fname,
+.row select,
+.row textarea {
+  width: 100%;
+  padding: 17px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  box-sizing: border-box;
+  resize: vertical;
+  border: 1px solid #ccc;
+}
+.row .css-1b34a8q-MuiAutocomplete-root .MuiOutlinedInput-root {
+  padding-top: 8.1px;
+  padding-bottom: 8.1px;
+}
+.row .css-154xyx0-MuiInputBase-root-MuiOutlinedInput-root {
+  font-size: 1.2rem !important;
+}
+.row .css-14lo706 span {
+  display: none !important;
+}
+.row .MuiFormLabel-colorPrimary {
+  display: none !important;
+}
+.col-25 label {
+  padding: 19px 12px 19px 0px;
+  display: inline-block;
+  color: white;
+  font-size: 1.4rem;
+}
+.register .container {
+  border-radius: 1.4rem;
+  background-color: #2aba75;
+  padding: 3.5vh 4vw;
+  width: 60%;
+  border: 1px solid white;
+  box-shadow: 24;
+}
+.register .col-25 {
+  float: left;
+  width: 30%;
+  font-size: 25px;
+}
+.register .col-75 {
+  float: left;
+  width: 70%;
+  margin-top: 6px;
+}
+.contactUs .container {
+  border-radius: 1.4rem;
+  background-color: #2aba75;
+  padding: 2vh 3vw;
+  width: 40%;
+  border: 1px solid white;
+  box-shadow: 24;
+}
+.contactUs .col-25 {
+  float: left;
+  width: 25%;
+  font-size: 25px;
+}
+.contactUs .col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .logoImg{
+    width: 70% !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  html{
+    font-size: 14px;
+  }
+  .register .col-25,
+  .register .col-75,
+  .contactUs .col-25,
+  .contactUs .col-75 {
+    width: 100%;
+    margin-top: 0;
+  }
+  .register .container {
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .contactUs .container {
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .col-25 label {
+    padding: 13px 12px 13px 0px;
+    display: inline-block;
+    color: white;
+  }
+  .col-25 label:first-of-type {
+    padding: 10px 12px 13px 0px;
+    display: inline-block;
+    color: white;
+  }
+  .link {
+    font-size: 1.4rem !important;
+    width: auto !important;
+  }
+  .link2 {
+    font-size: 1.4rem !important;
+    width: auto !important;
+  }
+  .btns{
+    display: flex;
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 880px) {
+  .register .container {
+    width: 80%;
+  }
+  .contactUs .container {
+    width: 70%;
+  }
+  html{
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 880px) and (max-width: 1016px) {
+  .register .container {
+    width: 80%;
+  }
+  .contactUs .container {
+    width: 70%;
+  }
+  html{
+    font-size: 16px;
+  }
+  .link {
+    font-size: 1.1rem !important;
+    width: 13rem !important;
+  }
+  .link2 {
+    font-size: 1.1rem !important;
+    width: 13rem !important;
+  }
+}
+@media screen and (min-width: 1016px) and (max-width: 1210px) {
+  .register .container {
+    width: 70%;
+  }
+  .contactUs .container {
+    width: 60%;
+  }
+  html{
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1210px) {
+  html{
+    font-size: 16px;
+  }
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navLink {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem 1rem;
+}
+.navLink:hover {
+  color: #2ABA75;
+}
+.navLink2 {
+  text-decoration: none;
+  color: #2ABA75;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem 1rem;
+  width: 100%;
+}
+.navLink2:hover {
+  color: white;
+}
+.link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem 0rem;
+  width: 14rem;
+}
+.link:hover {
+  color: #2ABA75;
+}
+.link2 {
+  text-decoration: none;
+  color: #2ABA75;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem 0rem;
+  width: 14rem;
+}
+.link2:hover {
+  color: white;
+}
+
+/* Contact Us */
+
+.messageTxt .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root{
+  padding: 0;
+  border-radius: 10px;
+  background-color: white;
+}
+
+/* About Us */
+.banner {
+  width: 100%;
+}
+.bannerImg {
+  width: 100%;
+  height: 50vh;
+}
+.logoImg{
+  width: 100%;
+}
+.whyUsImg {
+  width: 280px;
+}
+.whyUsImg1 {
+  width: 150px;
+}
+.btns{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
