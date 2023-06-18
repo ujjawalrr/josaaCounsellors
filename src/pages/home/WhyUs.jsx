@@ -71,7 +71,7 @@ const WhyUs = () => {
                     </Grid>
                     <Grid xs={12} sm={0.2} md={0.6} lg={1}></Grid>
                 </Grid>
-                <Grid container sx={{ p: '1rem' }}>
+                <Grid container sx={{ p: '1rem', backgroundColor: 'rgb(237, 247, 237)' }}>
                     <Grid xs={12} sm={0.8} md={1.4} lg={2}></Grid>
                     <Grid xs={12} sm={10.4} md={9.2} lg={8}>
                         <Typography component='div' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
@@ -81,10 +81,10 @@ const WhyUs = () => {
                             Take a quick look at the facilities you will be getting :
                         </Typography>
                         <Typography component='div' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
-                            1. Register and pay Rs. 799.
+                            1. Enroll Now and make payment.
                         </Typography>
                         <Typography component='div' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
-                            2. Based on your input, we will assign you mentor who will then call you and will ask some more information from you. You tell him your future goals and your choice.
+                            2. Based on your input, we will assign you a mentor who will then call you and will ask some more information from you. You tell him your future goals and your choice.
                         </Typography>
                         <Typography component='div' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
                             3. Based on your response on the call, we will analyse the colleges, we think would be suitable at your rank and your choice. Then an online meeting will be arranged with you, where you will be given that preferenced colleges. You can ask as many questions as you want in that meet. After discussing all the things, you can decide the final preference.
@@ -98,6 +98,12 @@ const WhyUs = () => {
                         <Typography component='div' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
                             6. Even after the meet, if you need any guidance, we are always available on Whatsapp.
                         </Typography>
+                    </Grid>
+                    <Grid xs={12} sm={0.8} md={1.4} lg={2}></Grid>
+                </Grid>
+                <Grid container sx={{ p: '1rem' }}>
+                    <Grid xs={12} sm={0.8} md={1.4} lg={2}></Grid>
+                    <Grid xs={12} sm={10.4} md={9.2} lg={8}>
                         <Typography component='div' sx={{ borderLeft: 5, my: '2rem', py: '2rem', px: '1rem', backgroundColor: 'rgb(237, 247, 237)', color: 'red', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
                             Note: Never disclose your JOSAA Details to anyone of us. We never ask you for the same.
                         </Typography>
@@ -105,7 +111,7 @@ const WhyUs = () => {
                             Note: We are only responsible for guiding you in selecting the preference. The final call is always yours. Choose the right preference for you.
                         </Typography>
                         <Typography component='div' sx={{ py: '0.8rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
-                            Enroll now to get the best college at your rank. We offer best counselling helpdesk at the most affordable price. We will be providing our services to only first 100 students. So enroll as early as possible.
+                            Enroll now to get the best college at your rank. We offer best counselling helpdesk at the most affordable price. We will be providing our services to first 100 students only. So enroll as early as possible.
                         </Typography>
                         <div className='btns'>
                             <Button className='btns1' sx={{ background: "#2ABA75", p: 0, borderRadius: '2.2rem', border: 1, borderColor: "#2ABA75", '&:hover': { backgroundColor: "white" } }}>
@@ -115,6 +121,9 @@ const WhyUs = () => {
                                 <Link className='link2' to='/contactUs'>Contact Us</Link>
                             </Button>
                         </div>
+                        <Typography component='div' sx={{ pt: '2.5rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
+                            You can also reach out to us via mail <b>josaacounsellors@gmail.com</b>
+                        </Typography>
                     </Grid>
                     <Grid xs={12} sm={0.8} md={1.4} lg={2}></Grid>
                 </Grid>

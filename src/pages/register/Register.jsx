@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Navbar from './Navbar'
+import React, { useState } from 'react'
+import Navbar from '../../components/Navbar'
 import { Alert, AlertTitle, Autocomplete, Box, Button, Grid, Snackbar, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import { Link, useNavigate } from "react-router-dom";
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import axios from 'axios';
 import Radio from '@mui/material/Radio';
@@ -20,45 +19,45 @@ const Register = () => {
     const [inputValueCat, setInputValueCat] = React.useState('');
     const [inputValueHomeState, setInputValueHomeState] = React.useState('');
     const [error, setError] = useState(null);
-  const [severity, setSeverity] = useState(null);
-  const [background, setBackground] = useState(null);
-  const [color, setColor] = useState(null);
+    const [severity, setSeverity] = useState(null);
+    const [background, setBackground] = useState(null);
+    const [color, setColor] = useState(null);
 
-  
-  const [open, setOpen] = React.useState(false);
 
-  const handleClick = () => {
-    setOpen(true);
-  };
+    const [open, setOpen] = React.useState(false);
 
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
+    const handleClick = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        setOpen(false);
+    };
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        try {
+            const res = await axios.post(`${process.env.REACT_APP_API_KEY}/auth/register`, signupData)
+            setError(res.data)
+            setSeverity("success")
+            setBackground("rgb(237, 247, 237)")
+            setColor("rgb(30, 70, 32)")
+            handleClick()
+        }
+        catch (error) {
+            setError(error.response.data)
+            setSeverity("error")
+            setBackground("rgb(211, 47, 47)")
+            setColor("white")
+            handleClick()
+        }
     }
-
-    setOpen(false);
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    try {
-      const res = await axios.post(`${process.env.REACT_APP_API_KEY}/auth/register`, signupData)
-      setError(res.data)
-      setSeverity("success")
-      setBackground("rgb(237, 247, 237)")
-      setColor("rgb(30, 70, 32)")
-      handleClick()
+    window.onclick = function (event) {
+        setOpen(false)
     }
-    catch (error) {
-      setError(error.response.data)
-      setSeverity("error")
-      setBackground("rgb(211, 47, 47)")
-      setColor("white")
-      handleClick()
-    }
-  }
-  window.onclick = function (event) {
-    setOpen(false)
-  }
 
     const handleChange = (event) => {
         setSignupData({

@@ -109,6 +109,9 @@ body {
   .logoImg{
     width: 70% !important;
   }
+  .contentContainer {
+    margin-top: 56px;
+  }
 }
 @media screen and (max-width: 800px) {
   html{
@@ -253,10 +256,10 @@ body {
 
 /* Contact Us */
 
-.messageTxt .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root{
-  padding: 0;
-  border-radius: 10px;
-  background-color: white;
+.messageTxt div{
+  padding: 0 !important;
+  border-radius: 10px !important;
+  background-color: white !important;
 }
 
 /* About Us */

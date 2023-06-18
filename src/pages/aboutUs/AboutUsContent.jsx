@@ -26,7 +26,6 @@ const AboutUsContent = () => {
                 <Grid container>
                     <Grid xs={12} sm={0.2} md={0.6} lg={1}></Grid>
                     <Grid xs={12} sm={4.6} md={4.4} lg={3} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        {/* <img className='logoImg' src={require("../../images/josaa-logo.jpg")} alt="" srcset="" /> */}
                     </Grid>
                     <Grid xs={12} sm={7} md={6.4} lg={7} sx={{ px: '1rem' }}>
                         <Typography component='div' sx={{ py: '0.8rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>

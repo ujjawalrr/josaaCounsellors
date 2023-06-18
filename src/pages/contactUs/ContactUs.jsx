@@ -1,16 +1,15 @@
-import React, { useContext, useState } from 'react'
-import Navbar from './Navbar'
-import { Autocomplete, Box, Button, Snackbar, Typography } from '@mui/material';
+import React, { useState } from 'react'
+import Navbar from '../../components/Navbar'
+import { Box, Button, Snackbar, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import { Link, useNavigate } from "react-router-dom";
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import axios from 'axios';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 import MuiAlert from '@mui/material/Alert';
+
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
