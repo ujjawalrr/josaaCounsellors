@@ -10,6 +10,12 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import AdsClickIcon from '@mui/icons-material/AdsClick';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
+import DiscountIcon from '@mui/icons-material/Discount';
+import CheckIcon from '@mui/icons-material/Check';
+import CircularProgress, {
+    circularProgressClasses,
+  } from '@mui/material/CircularProgress';
 
 const Register = () => {
     const [signupData, setSignupData] = useState({});
@@ -23,8 +29,8 @@ const Register = () => {
     const [severity, setSeverity] = useState(null);
     const [background, setBackground] = useState(null);
     const [color, setColor] = useState(null);
-
-
+    const [applyBtnTxt, setApplyBtnTxt] = useState("Apply");
+    const [applyBtnIcon, setApplyBtnIcon] = useState(<DiscountIcon />);
     const [open, setOpen] = React.useState(false);
 
     const handleClick = () => {
@@ -68,14 +74,34 @@ const Register = () => {
     }
     const handleDiscount = async (e) => {
         e.preventDefault()
+        setApplyBtnTxt("Checking");
+        setApplyBtnIcon(<>
+          <CircularProgress
+            variant="indeterminate"
+            disableShrink
+            sx={{
+              color: '#2ABA75',
+              animationDuration: '550ms',
+              [`& .${circularProgressClasses.circle}`]: {
+                strokeLinecap: 'round',
+              },
+            }}
+            size={20}
+            thickness={4}
+          /></>);
         try {
             const res = await axios.post(`${process.env.REACT_APP_API_KEY}/auth/discount`, signupData)
+            setApplyBtnTxt("Applied");
+        setApplyBtnIcon(<CheckIcon color="success" />);
             setErrorDiscount(null)
             setDiscountTitle(`${res.data.code} applied successfully`)
             setDiscountDesc(`Avail Rs.${res.data.value} discount. Pay Rs.${999 - res.data.value}`)
         }
         catch (error) {
+            setApplyBtnTxt("Apply");
+        setApplyBtnIcon(<DiscountIcon />);
             setErrorDiscount(error.response.data)
+
         }
     }
     return (
@@ -86,13 +112,13 @@ const Register = () => {
                 </div>
                 <div className="mail">
                     <a href="mailto:josaacounsellors@gmail.com" target="_blank" rel="noopener noreferrer">
-                        <img class="mail_img"
+                        <img className="mail_img"
                             src={require("../../images/email_icon.png")} />
                     </a>
                 </div>
                 {/* <div className="telegram">
                     <a href="https://t.me/+JNWP8AHrA3tjN2U9" target="_blank" rel="noopener noreferrer">
-                        <img class="telegram_img"
+                        <img className="telegram_img"
                             src={require("../../images/telegram.png")} />
                         <Alert sx={{ fontSize: '1rem', textAlign: 'justify' }} icon={<AdsClickIcon fontSize="inherit" />} severity="success">
                             <AlertTitle sx={{ fontSize: '1rem' }}>Click here</AlertTitle>
@@ -289,7 +315,7 @@ const Register = () => {
                         <Typography component='h1' sx={{ pt: '1rem', color: '#07441A', fontSize: '1.8rem', fontWeight: "500" }}>Have a discount code?</Typography>
                         <Typography component='div' sx={{ py: '0.5rem', color: 'white', fontSize: '1.5rem', fontWeight: "400" }}>
                             <input onChange={handleChange} type="text" id="code" className='fname' name="code" placeholder="Discount Code (Optional)" />
-                            <Button onClick={handleDiscount} sx={{ fontSize: '1rem', color: "#2aba75", backgroundColor: "white", py: 0.7, width: '130px', border: 1, borderColor: "white", borderRadius: 2, '&:hover': { backgroundColor: "#1C4733", color: "#ffffff", border: 1, borderColor: "#ffffff" } }} startIcon={<AppRegistrationIcon />}>Apply</Button>
+                            <Button onClick={handleDiscount} sx={{ fontSize: '1rem', color: "#2aba75", backgroundColor: "white", py: 0.7, width: '150px', border: 1, borderColor: "white", borderRadius: 2, '&:hover': { backgroundColor: "#1C4733", color: "#ffffff", border: 1, borderColor: "#ffffff" } }} startIcon={applyBtnIcon}>{applyBtnTxt}</Button>
                         </Typography>
                         <Typography component='div' sx={{ color: 'red', fontSize: '1.4rem', fontWeight: "500" }}>
                             {errorDiscount}
@@ -325,7 +351,7 @@ const Register = () => {
                             }}
                         />} label="" /> */}
                         <div className="buttons">
-                            <Button type='submit' onClick={handleSubmit} sx={{ fontSize: '1.3rem', mt: '1.1rem', color: "#2aba75", backgroundColor: "white", py: 1, width: '200px', border: 1, borderColor: "white", borderRadius: 2, '&:hover': { backgroundColor: "#1C4733", color: "#ffffff", border: 1, borderColor: "#ffffff" } }} startIcon={<AppRegistrationIcon />}>Submit</Button>
+                            <Button type='submit' onClick={handleSubmit} sx={{ fontSize: '1.3rem', mt: '1.1rem', color: "#2aba75", backgroundColor: "white", py: 1, width: '200px', border: 1, borderColor: "white", borderRadius: 2, '&:hover': { backgroundColor: "#1C4733", color: "#ffffff", border: 1, borderColor: "#ffffff" } }} startIcon={<HowToRegIcon />}>Submit</Button>
                         </div>
                         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
                             <Alert onClose={handleClose} severity={severity} sx={{ width: '90%', fontSize: "1.6rem", textAlign: 'justify', backgroundColor: { background }, color: { color } }}>

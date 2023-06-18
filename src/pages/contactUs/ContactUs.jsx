@@ -68,7 +68,7 @@ const ContactUs = () => {
         </div>
         <div className="mail">
           <a href="mailto:josaacounsellors@gmail.com" target="_blank" rel="noopener noreferrer">
-            <img class="mail_img"
+            <img className="mail_img"
               src={require("../../images/email_icon.png")} />
           </a>
         </div>
