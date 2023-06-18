@@ -92,7 +92,7 @@ const Register = () => {
         try {
             const res = await axios.post(`${process.env.REACT_APP_API_KEY}/auth/discount`, signupData)
             setApplyBtnTxt("Applied");
-        setApplyBtnIcon(<CheckIcon color="success" />);
+        setApplyBtnIcon(<CheckIcon color="#2ABA75" />);
             setErrorDiscount(null)
             setDiscountTitle(`${res.data.code} applied successfully`)
             setDiscountDesc(`Avail Rs.${res.data.value} discount. Pay Rs.${999 - res.data.value}`)
