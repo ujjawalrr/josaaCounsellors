@@ -315,3 +315,9 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
+.taglink{
+  text-decoration: none !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
