@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const WhyUs = () => {
     return (
         <div>
-            <Box sx={{ my: { xs: '4rem', sm: "6rem", md: '7rem' } }}>
+            <Box sx={{ mb: '2rem', mt: { xs: '4rem', sm: "6rem", md: '7rem' } }}>
                 <Typography component='h1' sx={{ mb: '3rem', color: '#07441a', fontSize: '3rem', textAlign: 'center', fontWeight: "500" }}>Why Choose Us?</Typography>
                 <Grid container sx={{ mb: '1rem' }}>
                     <Grid xs={12} sm={0.2} md={0.6} lg={1}></Grid>

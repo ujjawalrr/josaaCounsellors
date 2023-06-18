@@ -66,6 +66,12 @@ const ContactUs = () => {
       <div className='contentContainer login contactUs'>
         <div className="bg">
         </div>
+        <div className="mail">
+          <a href="mailto:josaacounsellors@gmail.com" target="_blank" rel="noopener noreferrer">
+            <img class="mail_img"
+              src={require("../../images/email_icon.png")} />
+          </a>
+        </div>
         <div className="container">
           <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', pb: '1.1vw' }}>
             <Typography variant="h4" component="h2" sx={{ color: 'white', fontSize: '2.5rem' }}>

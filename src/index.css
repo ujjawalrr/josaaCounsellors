@@ -112,6 +112,11 @@ body {
   .contentContainer {
     margin-top: 56px;
   }
+  .telegram_img{
+    width: 50px !important;
+    position: relative;
+    left: 50px;
+  }
 }
 @media screen and (max-width: 800px) {
   html{
@@ -292,4 +297,40 @@ body {
   border-radius: 10px;
   font-size: 1.4rem;
   margin-right: 0.5rem;
+}
+.mail{
+  position: fixed;
+  top: 50vh;
+  right: 20px;
+  display: flex;
+  z-index: 100000;
+}
+.mail_img{
+  width: 80px;
+  background-color: white;
+}
+.telegram{
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  display: flex;
+  z-index: 100;
+}
+.telegram_img{
+  width: 80px;
+}
+a{
+  text-decoration: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.taglink{
+  /* justify-content: flex-start !important; */
+  /* margin-left: 20px;
+  margin-top: 20px; */
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100000000;
 }

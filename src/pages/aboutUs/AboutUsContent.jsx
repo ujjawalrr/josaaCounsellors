@@ -1,6 +1,7 @@
 import React from 'react'
-import { Box, Button, Grid, Typography } from '@mui/material'
+import { Alert, AlertTitle, Box, Button, Grid, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
+import AdsClickIcon from '@mui/icons-material/AdsClick';
 
 const AboutUsContent = () => {
     return (
@@ -8,6 +9,28 @@ const AboutUsContent = () => {
             <div className="banner">
                 <img className='bannerImg' src={require("../../images/bannerAllIITs.jpeg")} alt="" srcset="" />
             </div>
+            <div className="mail">
+                <a href="mailto:josaacounsellors@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <img class="mail_img"
+                        src={require("../../images/email_icon.png")} />
+                </a>
+            </div>
+            <div className="telegram">
+                <a href="https://t.me/+JNWP8AHrA3tjN2U9" target="_blank" rel="noopener noreferrer">
+                    <img class="telegram_img"
+                        src={require("../../images/telegram.png")} />
+                    <Alert sx={{ fontSize: '1rem', textAlign: 'justify' }} icon={<AdsClickIcon fontSize="inherit" />} severity="success">
+                        <AlertTitle sx={{ fontSize: '1rem' }}>Click here to get access to free Telegram</AlertTitle>
+                        <AlertTitle sx={{ fontSize: '1rem' }}>Group and get your queries resolved</AlertTitle>
+                    </Alert>
+                </a>
+            </div>
+            <Link to='/register' className='taglink'>
+                <Alert sx={{ fontSize: '1rem', textAlign: 'justify' }} icon={<AdsClickIcon fontSize="inherit" />} severity="success">
+                    <AlertTitle sx={{ fontSize: '1rem' }}>Click here to get JOSAA Counselling</AlertTitle>
+                    <AlertTitle sx={{ fontSize: '1rem' }}>Helpdesk at lowest cost</AlertTitle>
+                </Alert>
+            </Link>
             <Box sx={{ my: "2.5rem" }}>
                 <Typography component='h1' sx={{ mb: '2.5rem', color: '#07441a', fontSize: '3rem', textAlign: 'center', fontWeight: "500" }}>About Us</Typography>
                 <Grid container>

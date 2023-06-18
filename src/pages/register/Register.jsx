@@ -9,6 +9,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import AdsClickIcon from '@mui/icons-material/AdsClick';
 
 const Register = () => {
     const [signupData, setSignupData] = useState({});
@@ -83,6 +84,22 @@ const Register = () => {
             <div className='contentContainer login register'>
                 <div className="bg">
                 </div>
+                <div className="mail">
+                    <a href="mailto:josaacounsellors@gmail.com" target="_blank" rel="noopener noreferrer">
+                        <img class="mail_img"
+                            src={require("../../images/email_icon.png")} />
+                    </a>
+                </div>
+                {/* <div className="telegram">
+                    <a href="https://t.me/+JNWP8AHrA3tjN2U9" target="_blank" rel="noopener noreferrer">
+                        <img class="telegram_img"
+                            src={require("../../images/telegram.png")} />
+                        <Alert sx={{ fontSize: '1rem', textAlign: 'justify' }} icon={<AdsClickIcon fontSize="inherit" />} severity="success">
+                            <AlertTitle sx={{ fontSize: '1rem' }}>Click here</AlertTitle>
+                            <strong>To get access to free Telegram Group</strong>
+                        </Alert>
+                    </a>
+                </div> */}
                 <div className="container">
                     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', pb: '1.1vw' }}>
                         <Typography variant="h4" component="h2" sx={{ color: 'white', fontSize: '2.5rem' }}>
@@ -299,6 +316,14 @@ const Register = () => {
                                 <input onChange={handleChange} type="text" id="paymentID" className='fname' name="paymentID" placeholder="Enter UPI Transaction ID/UPI Reference Number" />
                             </div>
                         </div>
+                        {/* <FormControlLabel sx={{ color: 'black', py: '0rem', my: '0rem', fontSize: '1.4rem' }} control={<Checkbox
+                            sx={{
+                                color: '#2ABA75', fontSize: '1.4rem',
+                                '&.Mui-checked': {
+                                    color: '#2ABA75',
+                                },
+                            }}
+                        />} label="" /> */}
                         <div className="buttons">
                             <Button type='submit' onClick={handleSubmit} sx={{ fontSize: '1.3rem', mt: '1.1rem', color: "#2aba75", backgroundColor: "white", py: 1, width: '200px', border: 1, borderColor: "white", borderRadius: 2, '&:hover': { backgroundColor: "#1C4733", color: "#ffffff", border: 1, borderColor: "#ffffff" } }} startIcon={<AppRegistrationIcon />}>Submit</Button>
                         </div>
