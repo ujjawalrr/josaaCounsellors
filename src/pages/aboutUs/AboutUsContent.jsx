@@ -15,20 +15,17 @@ const AboutUsContent = () => {
                         src={require("../../images/email_icon.png")} />
                 </a>
             </div>
-            <div className="telegram">
+            <div className="taglink">
                 <a href="https://t.me/+JNWP8AHrA3tjN2U9" target="_blank" rel="noopener noreferrer">
-                    <img class="telegram_img"
-                        src={require("../../images/telegram.png")} />
-                    <Alert sx={{ fontSize: '1rem', textAlign: 'justify' }} icon={<AdsClickIcon fontSize="inherit" />} severity="success">
-                        <AlertTitle sx={{ fontSize: '1rem' }}>Click here to get access to free Telegram</AlertTitle>
-                        <AlertTitle sx={{ fontSize: '1rem' }}>Group and get your queries resolved</AlertTitle>
+                    <Alert sx={{ fontSize: '1rem', textAlign: 'justify' }} icon={<img class="telegram_img"
+                        src={require("../../images/telegram.png")} />} severity="success">
+                        <AlertTitle sx={{ fontSize: '1rem' }}>Click here to get access to free Telegram Group and get your queries resolved</AlertTitle>
                     </Alert>
                 </a>
             </div>
             <Link to='/register' className='taglink'>
                 <Alert sx={{ fontSize: '1rem', textAlign: 'justify' }} icon={<AdsClickIcon fontSize="inherit" />} severity="success">
-                    <AlertTitle sx={{ fontSize: '1rem' }}>Click here to get JOSAA Counselling</AlertTitle>
-                    <AlertTitle sx={{ fontSize: '1rem' }}>Helpdesk at lowest cost</AlertTitle>
+                    <AlertTitle sx={{ fontSize: '1rem' }}>Click here to get JOSAA Counselling Helpdesk at lowest cost</AlertTitle>
                 </Alert>
             </Link>
             <Box sx={{ my: "2.5rem" }}>
