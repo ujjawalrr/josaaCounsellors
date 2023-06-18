@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Navbar from './Navbar'
-import { Autocomplete, Box, Button, Typography } from '@mui/material';
+import { Alert, AlertTitle, Autocomplete, Box, Button, Grid, Snackbar, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { Link, useNavigate } from "react-router-dom";
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
@@ -13,10 +13,52 @@ import FormLabel from '@mui/material/FormLabel';
 
 const Register = () => {
     const [signupData, setSignupData] = useState({});
-    const [error, setError] = useState(null);
+    const [errorDiscount, setErrorDiscount] = useState(null);
+    const [discountTitle, setDiscountTitle] = useState("Flat Rs.200 discount");
+    const [discountDesc, setDiscountDesc] = useState("Pay Rs.799");
     const [inputValueState, setInputValueState] = React.useState('');
     const [inputValueCat, setInputValueCat] = React.useState('');
     const [inputValueHomeState, setInputValueHomeState] = React.useState('');
+    const [error, setError] = useState(null);
+  const [severity, setSeverity] = useState(null);
+  const [background, setBackground] = useState(null);
+  const [color, setColor] = useState(null);
+
+  
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const res = await axios.post(`${process.env.REACT_APP_API_KEY}/auth/register`, signupData)
+      setError(res.data)
+      setSeverity("success")
+      setBackground("rgb(237, 247, 237)")
+      setColor("rgb(30, 70, 32)")
+      handleClick()
+    }
+    catch (error) {
+      setError(error.response.data)
+      setSeverity("error")
+      setBackground("rgb(211, 47, 47)")
+      setColor("white")
+      handleClick()
+    }
+  }
+  window.onclick = function (event) {
+    setOpen(false)
+  }
 
     const handleChange = (event) => {
         setSignupData({
@@ -24,19 +66,17 @@ const Register = () => {
             [event.target.name]: event.target.value,
         })
     }
-
-    const handleSubmit = async (e) => {
+    const handleDiscount = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.post(`${process.env.REACT_APP_API_KEY}/auth/register`, signupData)
-            setError(res.data)
-            // openForm()
+            const res = await axios.post(`${process.env.REACT_APP_API_KEY}/auth/discount`, signupData)
+            setErrorDiscount(null)
+            setDiscountTitle(`${res.data.code} applied successfully`)
+            setDiscountDesc(`Avail Rs.${res.data.value} discount. Pay Rs.${999 - res.data.value}`)
         }
         catch (error) {
-            setError(error.response.data)
-            // openForm()
+            setErrorDiscount(error.response.data)
         }
-
     }
     return (
         <div>
@@ -230,17 +270,44 @@ const Register = () => {
                                 <input onChange={handleChange} type="text" id="advCategoryRank" className='fname' name="advCategoryRank" placeholder="Enter Your JEE Advanced Category Rank" />
                             </div>
                         </div>
+                        <Typography component='h1' sx={{ pt: '1rem', color: '#07441A', fontSize: '1.8rem', fontWeight: "500" }}>Have a discount code?</Typography>
+                        <Typography component='div' sx={{ py: '0.5rem', color: 'white', fontSize: '1.5rem', fontWeight: "400" }}>
+                            <input onChange={handleChange} type="text" id="code" className='fname' name="code" placeholder="Discount Code (Optional)" />
+                            <Button onClick={handleDiscount} sx={{ fontSize: '1rem', color: "#2aba75", backgroundColor: "white", py: 0.7, width: '130px', border: 1, borderColor: "white", borderRadius: 2, '&:hover': { backgroundColor: "#1C4733", color: "#ffffff", border: 1, borderColor: "#ffffff" } }} startIcon={<AppRegistrationIcon />}>Apply</Button>
+                        </Typography>
+                        <Typography component='div' sx={{ color: 'red', fontSize: '1.4rem', fontWeight: "500" }}>
+                            {errorDiscount}
+                        </Typography>
+                        <Alert severity="success" sx={{ my: '0.5rem', fontSize: "1.4rem", textAlign: 'justify', backgroundColor: "rgb(237, 247, 237)", color: "rgb(30, 70, 32)" }}>
+                            <AlertTitle>{discountTitle}</AlertTitle>
+                            {discountDesc} <span style={{ textDecoration: 'line-through' }}>Rs.999</span> Only
+                        </Alert>
+                        <Grid container sx={{ py: '1rem' }}>
+                            <Grid xs={12} sm={4.8} md={5} lg={4} sx={{ display: "flex", alignItems: 'center', justifyContent: 'center' }}>
+                                <img className='qrImg' src={require("../../images/paymentQRcode.jpeg")} alt="" />
+                            </Grid>
+                            <Grid xs={12} sm={7.2} md={7} lg={8} sx={{ px: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+
+                                <Typography component='h1' sx={{ color: 'white', fontSize: '1.4rem', fontWeight: "400", textAlign: 'justify' }}>To make payment, scan this QR Code from any UPI App or you can pay directly to our UPI ID josaacounsellors@paytm</Typography>
+                                <Typography component='h1' sx={{ color: 'white', fontSize: '1.4rem', fontWeight: "400", textAlign: 'justify' }}>After making the payment, fill your UPI Transaction ID OR UPI Reference Number below and Submit.</Typography>
+                            </Grid>
+                        </Grid>
                         <div className="row">
                             <div className="col-25">
-                                <label htmlFor="code">Coupon Code</label>
+                                <label htmlFor="paymentID">Payment Details</label>
                             </div>
                             <div className="col-75">
-                                <input onChange={handleChange} type="text" id="code" className='fname' name="code" placeholder="(optional) Enter the code to get exciting discount" />
+                                <input onChange={handleChange} type="text" id="paymentID" className='fname' name="paymentID" placeholder="Enter UPI Transaction ID/UPI Reference Number" />
                             </div>
                         </div>
                         <div className="buttons">
-                            <Button type='submit' onClick={handleSubmit} sx={{ fontSize: '1.3rem', mt: '1.1rem', color: "#2aba75", backgroundColor: "white", py: 1, width: '200px', border: 1, borderColor: "white", borderRadius: 2, '&:hover': { backgroundColor: "#1C4733", color: "#ffffff", border: 1, borderColor: "#ffffff" } }} startIcon={<AppRegistrationIcon />}>Pay Now</Button>
+                            <Button type='submit' onClick={handleSubmit} sx={{ fontSize: '1.3rem', mt: '1.1rem', color: "#2aba75", backgroundColor: "white", py: 1, width: '200px', border: 1, borderColor: "white", borderRadius: 2, '&:hover': { backgroundColor: "#1C4733", color: "#ffffff", border: 1, borderColor: "#ffffff" } }} startIcon={<AppRegistrationIcon />}>Submit</Button>
                         </div>
+                        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+                            <Alert onClose={handleClose} severity={severity} sx={{ width: '90%', fontSize: "1.6rem", textAlign: 'justify', backgroundColor: { background }, color: { color } }}>
+                                {error}
+                            </Alert>
+                        </Snackbar>
                     </form>
                 </div>
             </div>
@@ -289,4 +356,4 @@ const states = [
     "Uttar Pradesh",
     "Uttarakhand",
     "West Bengal",
-  ];
+];

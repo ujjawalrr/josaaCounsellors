@@ -41,7 +41,6 @@ function Navbar() {
               display: { xs: 'none', md: 'flex' },
               fontFamily: '"Sacramento", cursive',
               fontWeight: 500,
-              // letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
@@ -108,7 +107,6 @@ function Navbar() {
               flexGrow: 1,
               fontFamily: '"Sacramento", cursive',
               fontWeight: 500,
-              // letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
