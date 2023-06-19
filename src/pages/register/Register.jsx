@@ -2,14 +2,11 @@ import React, { useState } from 'react'
 import Navbar from '../../components/Navbar'
 import { Alert, AlertTitle, Autocomplete, Box, Button, Grid, Snackbar, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import axios from 'axios';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import AdsClickIcon from '@mui/icons-material/AdsClick';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import DiscountIcon from '@mui/icons-material/Discount';
 import CheckIcon from '@mui/icons-material/Check';
@@ -113,19 +110,9 @@ const Register = () => {
                 <div className="mail">
                     <a href="mailto:josaacounsellors@gmail.com" target="_blank" rel="noopener noreferrer">
                         <img className="mail_img"
-                            src={require("../../images/email_icon.png")} />
+                            src={require("../../images/email_icon.png")} alt='' />
                     </a>
                 </div>
-                {/* <div className="telegram">
-                    <a href="https://t.me/+JNWP8AHrA3tjN2U9" target="_blank" rel="noopener noreferrer">
-                        <img className="telegram_img"
-                            src={require("../../images/telegram.png")} />
-                        <Alert sx={{ fontSize: '1rem', textAlign: 'justify' }} icon={<AdsClickIcon fontSize="inherit" />} severity="success">
-                            <AlertTitle sx={{ fontSize: '1rem' }}>Click here</AlertTitle>
-                            <strong>To get access to free Telegram Group</strong>
-                        </Alert>
-                    </a>
-                </div> */}
                 <div className="container">
                     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', pb: '1.1vw' }}>
                         <Typography variant="h4" component="h2" sx={{ color: 'white', fontSize: '2.5rem' }}>
@@ -329,7 +316,6 @@ const Register = () => {
                                 <img className='qrImg' src={require("../../images/paymentQRcode.jpeg")} alt="" />
                             </Grid>
                             <Grid xs={12} sm={7.2} md={7} lg={8} sx={{ px: '1rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-
                                 <Typography component='h1' sx={{ color: 'white', fontSize: '1.4rem', fontWeight: "400", textAlign: 'justify' }}>To make payment, scan this QR Code from any UPI App or you can pay directly to our UPI ID josaacounsellors@paytm</Typography>
                                 <Typography component='h1' sx={{ color: 'white', fontSize: '1.4rem', fontWeight: "400", textAlign: 'justify' }}>After making the payment, fill your UPI Transaction ID OR UPI Reference Number below and Submit.</Typography>
                             </Grid>
@@ -354,7 +340,7 @@ const Register = () => {
                             <Button type='submit' onClick={handleSubmit} sx={{ fontSize: '1.3rem', mt: '1.1rem', color: "#2aba75", backgroundColor: "white", py: 1, width: '200px', border: 1, borderColor: "white", borderRadius: 2, '&:hover': { backgroundColor: "#1C4733", color: "#ffffff", border: 1, borderColor: "#ffffff" } }} startIcon={<HowToRegIcon />}>Submit</Button>
                         </div>
                         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-                            <Alert onClose={handleClose} severity={severity} sx={{ width: '90%', fontSize: "1.6rem", textAlign: 'justify', backgroundColor: { background }, color: { color } }}>
+                            <Alert onClose={handleClose} severity={severity} sx={{ width: { xs: '100%', sm: "90%" }, fontSize: "1.6rem", textAlign: 'justify', backgroundColor: { background }, color: { color } }}>
                                 {error}
                             </Alert>
                         </Snackbar>

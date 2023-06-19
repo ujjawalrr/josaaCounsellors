@@ -105,6 +105,11 @@ body {
   display: table;
   clear: both;
 }
+@media screen and (max-width: 375px) {
+  #code {
+    max-width: 16rem !important;
+  }
+}
 @media screen and (max-width: 600px) {
   .logoImg{
     width: 70% !important;
@@ -292,11 +297,14 @@ body {
   border-radius: 10px;
   font-size: 1.4rem;
   margin-right: 0.5rem;
+  margin-bottom: 10px !important;
+  max-width: 18rem;
 }
 .mail{
   position: fixed;
   bottom: 20px;
   right: 20px;
+  z-index: 2;
 }
 .mail_img{
   width: 45px;

@@ -72,7 +72,6 @@ function Navbar() {
               onClose={handleCloseNavMenu}
               sx={{
                 display: { xs: 'block', md: 'none' },
-                zIndex: '100000000000'
               }}
             >
               <MenuItem onClick={handleCloseNavMenu} sx={{ p: 0 }}>

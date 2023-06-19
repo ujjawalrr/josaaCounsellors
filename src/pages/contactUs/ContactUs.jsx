@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../../components/Navbar'
 import { Box, Button, Snackbar, Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
 import axios from 'axios';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
@@ -69,7 +69,7 @@ const ContactUs = () => {
         <div className="mail">
           <a href="mailto:josaacounsellors@gmail.com" target="_blank" rel="noopener noreferrer">
             <img className="mail_img"
-              src={require("../../images/email_icon.png")} />
+              src={require("../../images/email_icon.png")} alt='' />
           </a>
         </div>
         <div className="container">
@@ -139,10 +139,10 @@ const ContactUs = () => {
               </div>
             </div>
             <div className="buttons">
-              <Button type='submit' onClick={handleSubmit} sx={{ fontSize: '1.3rem', mt: '1.1rem', color: "#2aba75", backgroundColor: "white", py: 1, width: '200px', border: 1, borderColor: "white", borderRadius: 2, '&:hover': { backgroundColor: "#1C4733", color: "#ffffff", border: 1, borderColor: "#ffffff" } }} startIcon={<AppRegistrationIcon />}>Send</Button>
+              <Button type='submit' onClick={handleSubmit} sx={{ fontSize: '1.3rem', mt: '1.1rem', color: "#2aba75", backgroundColor: "white", py: 1, width: '200px', border: 1, borderColor: "white", borderRadius: 2, '&:hover': { backgroundColor: "#1C4733", color: "#ffffff", border: 1, borderColor: "#ffffff" } }} startIcon={<ContactPageIcon />}>Send</Button>
             </div>
             <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-              <Alert onClose={handleClose} severity={severity} sx={{ width: '90%', fontSize: "1.6rem", textAlign: 'justify', backgroundColor: { background }, color: { color } }}>
+              <Alert onClose={handleClose} severity={severity} sx={{ width: { xs: '100%', sm: "90%" }, fontSize: "1.6rem", textAlign: 'justify', backgroundColor: { background }, color: { color } }}>
                 {error}
               </Alert>
             </Snackbar>
