@@ -80,23 +80,23 @@ const WhyUs = () => {
                         <Typography component='div' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
                             Take a quick look at the facilities you will be getting :
                         </Typography>
-                        <Typography component='div' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
-                            1. Enroll Now and make payment.
+                        <Typography component='li' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
+                            Guidance on every step - Registration to admission
                         </Typography>
-                        <Typography component='div' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
-                            2. Based on your input, we will assign you a mentor who will then call you and will ask some more information from you. You tell him your future goals and your choice.
+                        <Typography component='li' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
+                            One on One Personalised Guidance through Google Meet, Phone Call and Whatsapp
                         </Typography>
-                        <Typography component='div' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
-                            3. Based on your response on the call, we will analyse the colleges, we think would be suitable at your rank and your choice. Then an online meeting will be arranged with you, where you will be given that preferenced colleges. You can ask as many questions as you want in that meet. After discussing all the things, you can decide the final preference.
+                        <Typography component='li' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
+                            Customised Choice Preference List Pdf - This pdf will be based on your interests and your future goals
                         </Typography>
-                        <Typography component='div' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
-                            4. Still confused? You can request us to arrange another online meet for you, where all your doubts will be cleared and queries will be answered through proper guidance.
+                        <Typography component='li' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
+                            College details from its Student Perspective - Everything about choosen college will be taken into consideration by talking with the students who are currently studying there
                         </Typography>
-                        <Typography component='div' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
-                            5. If you think that mentor/counsellor is not guiding you properly, you can contact us on whatsapp to change the counsellor.
+                        <Typography component='li' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
+                            Choice Filling, Fees, Physical Reporting Guidance - We will guide you throughout the whole process from registration to admission
                         </Typography>
-                        <Typography component='div' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
-                            6. Even after the meet, if you need any guidance, we are always available on Whatsapp.
+                        <Typography component='li' sx={{ py: '1rem', color: 'black', fontSize: '1.3rem', textAlign: 'justify', fontWeight: "400" }}>
+                            Admission, Loan Application Process Guidance - Not only till JOSAA Counselling, we will also support you after the seat allotment, if you need further details about Education Loan process and Scholarships
                         </Typography>
                     </Grid>
                     <Grid xs={12} sm={0.8} md={1.4} lg={2}></Grid>
