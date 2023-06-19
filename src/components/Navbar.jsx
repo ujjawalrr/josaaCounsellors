@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
@@ -27,7 +26,7 @@ function Navbar() {
     <AppBar position="fixed" sx={{ backgroundColor: '#2ABA75', top: 0 }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <img className='logoImgAll' src={require("../images/logo.png")} alt="" />
           <Typography
             variant="h6"
             noWrap
@@ -88,7 +87,7 @@ function Navbar() {
               </MenuItem>
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <img className='logoImgPhone' src={require("../images/logo.png")} alt="" />
           <Typography
             variant="h5"
             noWrap
